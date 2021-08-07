@@ -1,6 +1,5 @@
-import { sha3 } from 'ethereumjs-util';
-
 import { Schema } from '../types';
+import { keccak, keccakFromString, keccakFromHexString, isHexString } from 'ethereumjs-util';
 
 export interface ENSName {
   nodeHash: string;
@@ -13,8 +12,9 @@ export const namehash = (name: string) => {
   if (name !== '') {
     const labels = name.split('.');
     for (let i = labels.length - 1; i >= 0; i--) {
-      const labelHash = sha3(labels[i]).toString('hex');
-      node = sha3(new Buffer(node + labelHash, 'hex')).toString('hex');
+      // I'm not convinced this is necessary but this will match the behaviour from original repo
+      const labelHash = isHexString(labels[i]) ? keccakFromHexString(labels[i]).toString('hex') : keccakFromString(labels[i]).toString('hex');
+      node = keccak(Buffer.from(node + labelHash, 'hex')).toString('hex');
     }
   }
   return '0x' + node.toString();
@@ -23,7 +23,7 @@ export const namehash = (name: string) => {
 export const nodehash = (name: string) => {
   const label = name.split('.')[0];
   if (label) {
-    return '0x' + sha3(label).toString('hex');
+    return '0x' + keccakFromString(label).toString('hex');
   } else {
     return '';
   }

@@ -1,12 +1,3 @@
-import * as Web3 from 'web3';
-
-/* HACK */
-// @ts-ignore
-Web3.AbiType = {
-  Function: 'function',
-  Event: 'event',
-};
-
 export {
   encodeBuy,
   encodeSell,
@@ -21,4 +12,4 @@ export { tokens } from './tokens/index';
 
 export {
   AbiType,
-} from 'web3';
+} from "ethereum-types";

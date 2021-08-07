@@ -1,6 +1,5 @@
-import { BigNumber } from '@0xproject/utils';
+import { BigNumber } from 'bignumber.js';
 import * as ethABI from 'ethereumjs-abi';
-import * as Web3 from 'web3';
 import { WyvernProtocol } from 'wyvern-js';
 import { WyvernAtomicizerContract } from 'wyvern-js/lib/abi_gen/wyvern_atomicizer';
 
@@ -72,7 +71,7 @@ export interface LimitedCallSpec {
 }
 
 export const encodeCall = (abi: AnnotatedFunctionABI, parameters: any[]): string => {
-  const inputTypes = abi.inputs.map(i => i.type);
+  const inputTypes = abi.inputs.map((i:any) => i.type);
   return '0x' + Buffer.concat([
     ethABI.methodID(abi.name, inputTypes),
     ethABI.rawEncode(inputTypes, parameters),
@@ -193,7 +192,7 @@ export const encodeBuy: BuyEncoder<any> = (schema, asset, address) => {
 export type DefaultCallEncoder = (abi: AnnotatedFunctionABI, address: string) => string;
 
 export const encodeDefaultCall: DefaultCallEncoder = (abi, address) => {
-  const parameters = abi.inputs.map(input => {
+  const parameters = abi.inputs.map((input: any) => {
     switch (input.kind) {
       case FunctionInputKind.Replaceable:
         return WyvernProtocol.generateDefaultValue(input.type);
