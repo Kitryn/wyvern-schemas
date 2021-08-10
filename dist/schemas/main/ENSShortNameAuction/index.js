@@ -13,19 +13,19 @@ exports.ENSShortNameAuctionSchema = exports.ENS_SHORT_NAME_AUCTION_ADDRESS = voi
 const ethereum_types_1 = require("ethereum-types");
 const ens_1 = require("../../../common/ens");
 const types_1 = require("../../../types");
-exports.ENS_SHORT_NAME_AUCTION_ADDRESS = '0x699c7f511c9e2182e89f29b3bfb68bd327919d17';
-exports.ENSShortNameAuctionSchema = Object.assign(Object.assign({}, ens_1.ENSNameBaseSchema), { version: 0, deploymentBlock: 8488908, name: 'ENSShortNameAuction', description: 'ERC721 ENS short (3-6 character) names sold via auction.', thumbnail: '', website: 'https://ens.domains/', formatter: ({ name }) => __awaiter(void 0, void 0, void 0, function* () {
+exports.ENS_SHORT_NAME_AUCTION_ADDRESS = "0x699c7f511c9e2182e89f29b3bfb68bd327919d17";
+exports.ENSShortNameAuctionSchema = Object.assign(Object.assign({}, ens_1.ENSNameBaseSchema), { version: 0, deploymentBlock: 8488908, name: "ENSShortNameAuction", description: "ERC721 ENS short (3-6 character) names sold via auction.", thumbnail: "", website: "https://ens.domains/", formatter: ({ name }) => __awaiter(void 0, void 0, void 0, function* () {
         return {
-            title: 'ENS Short Name: ' + name,
-            description: '',
-            url: '',
-            thumbnail: '',
+            title: "ENS Short Name: " + name,
+            description: "",
+            url: "",
+            thumbnail: "",
             properties: [],
         };
     }), functions: {
         transfer: ({ name }) => ({
             type: ethereum_types_1.AbiType.Function,
-            name: 'register',
+            name: "register",
             payable: false,
             constant: false,
             stateMutability: types_1.StateMutability.Nonpayable,
@@ -33,11 +33,15 @@ exports.ENSShortNameAuctionSchema = Object.assign(Object.assign({}, ens_1.ENSNam
             inputs: [
                 {
                     kind: types_1.FunctionInputKind.Data,
-                    name: 'name',
-                    type: 'string',
-                    value: name.split('.')[0],
+                    name: "name",
+                    type: "string",
+                    value: name.split(".")[0],
                 },
-                { kind: types_1.FunctionInputKind.Replaceable, name: 'owner', type: 'address' },
+                {
+                    kind: types_1.FunctionInputKind.Replaceable,
+                    name: "owner",
+                    type: "address",
+                },
             ],
             outputs: [],
         }),
@@ -46,21 +50,21 @@ exports.ENSShortNameAuctionSchema = Object.assign(Object.assign({}, ens_1.ENSNam
         transfer: [
             {
                 type: ethereum_types_1.AbiType.Event,
-                name: 'NameRegistered',
+                name: "NameRegistered",
                 target: exports.ENS_SHORT_NAME_AUCTION_ADDRESS,
                 anonymous: false,
                 inputs: [
                     {
                         kind: types_1.EventInputKind.Asset,
                         indexed: false,
-                        name: 'name',
-                        type: 'string',
+                        name: "name",
+                        type: "string",
                     },
                     {
                         kind: types_1.EventInputKind.Destination,
                         indexed: false,
-                        name: 'owner',
-                        type: 'address',
+                        name: "owner",
+                        type: "address",
                     },
                 ],
                 assetFromInputs: (inputs) => __awaiter(void 0, void 0, void 0, function* () {
