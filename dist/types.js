@@ -7,7 +7,7 @@ var Network;
 (function (Network) {
     Network["Main"] = "main";
     Network["Rinkeby"] = "rinkeby";
-    Network["Kovan"] = "kovan";
+    // Kovan = 'kovan',
 })(Network = exports.Network || (exports.Network = {}));
 var ABIType;
 (function (ABIType) {

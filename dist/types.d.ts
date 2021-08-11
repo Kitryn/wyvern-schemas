@@ -1,10 +1,9 @@
 import { AbiType } from "ethereum-types";
-import { AnnotatedFunctionInput, AnnotatedFunctionABI, FunctionInputKind } from 'wyvern-js/lib/types';
-export { AnnotatedFunctionInput, AnnotatedFunctionABI, FunctionInputKind, };
+import { AnnotatedFunctionInput, AnnotatedFunctionABI, FunctionInputKind } from "wyvern-js/lib/types";
+export { AnnotatedFunctionInput, AnnotatedFunctionABI, FunctionInputKind };
 export declare enum Network {
     Main = "main",
-    Rinkeby = "rinkeby",
-    Kovan = "kovan"
+    Rinkeby = "rinkeby"
 }
 export declare enum ABIType {
     Function = "function",

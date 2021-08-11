@@ -1,21 +1,17 @@
-import { AbiType } from "ethereum-types"
+import { AbiType } from "ethereum-types";
 
 import {
   AnnotatedFunctionInput,
   AnnotatedFunctionABI,
   FunctionInputKind,
-} from 'wyvern-js/lib/types';
+} from "wyvern-js/lib/types";
 
-export {
-  AnnotatedFunctionInput,
-  AnnotatedFunctionABI,
-  FunctionInputKind,
-}
+export { AnnotatedFunctionInput, AnnotatedFunctionABI, FunctionInputKind };
 
 export enum Network {
-  Main = 'main',
-  Rinkeby = 'rinkeby',
-  Kovan = 'kovan',
+  Main = "main",
+  Rinkeby = "rinkeby",
+  // Kovan = 'kovan',
 }
 
 export enum ABIType {
@@ -36,17 +32,17 @@ export interface NetworkTokens {
 }
 
 export enum StateMutability {
-  Pure = 'pure',
-  View = 'view',
-  Payable = 'payable',
-  Nonpayable = 'nonpayable',
+  Pure = "pure",
+  View = "view",
+  Payable = "payable",
+  Nonpayable = "nonpayable",
 }
 
 export enum FunctionOutputKind {
-  Owner = 'owner',
-  Asset = 'asset',
-  Count = 'count',
-  Other = 'other',
+  Owner = "owner",
+  Asset = "asset",
+  Count = "count",
+  Other = "other",
 }
 
 export interface AnnotatedFunctionOutput {
@@ -60,10 +56,10 @@ export interface AnnotatedFunctionABIReturning<T> extends AnnotatedFunctionABI {
 }
 
 export enum EventInputKind {
-  Source = 'source',
-  Destination = 'destination',
-  Asset = 'asset',
-  Other = 'other',
+  Source = "source",
+  Destination = "destination",
+  Asset = "asset",
+  Other = "other",
 }
 
 export interface AnnotatedEventInput {
