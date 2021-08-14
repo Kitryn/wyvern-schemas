@@ -44,6 +44,6 @@
     "ethereumjs-abi": "https://github.com/ProjectWyvern/ethereumjs-abi.git",
     "ethereumjs-util": "^7.1.0",
     "ethers": "^5.4.4",
-    "wyvern-js": "https://github.com/Kitryn/wyvern-js#37f6d2517884f708478fed54d9b4d30c23802103"
+    "wyvern-js": "https://github.com/Kitryn/wyvern-js#8b75c770dd0b4dc93d0992cae89175d46ea12bbd"
   }
 }
